@@ -1,60 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <title>Animation</title>
-</head>
-<body>
-    <section class="screen">
-        <ul class="menu ">
-            <li><h1>Space Pirates</h1></li>
-            <li><h2 class="level">Level 0</h2></li>
-            <li class="healthBar">
-                <img src="./assets/health.png" alt="health-bar1" class="heart h1" height="50px" width="50px">
-                <img src="./assets/health.png" alt="health-bar2" class="heart h2" height="50px" width="50px">
-                <img src="./assets/health.png" alt="health-bar3" class="heart h3" height="50px" width="50px">
-                <img src="./assets/health.png" alt="health-bar4" class="heart h4" height="50px" width="50px">
-                <img src="./assets/health.png" alt="health-bar5" class="heart h5" height="50px" width="50px">
-               </li>
-               <li><h2 id="sc">Score</h2></li>
-               <li><h2 id="score">0</h2></li>
-            <li class="button"><button class="b1">Start</button></li>
-            <li class="button"><button class="b2">Restart</button></li>
-            <li class="button"><button class="b3">Exit</button></li>
-            
-        </ul>
-        <div class="game-container">
-            
-            <div class="background">
-                <div class="space-ship">
-                    <div id="enemy">
-                        <div class="falling-object" id="object1">
-                            <img src="./assets/eship.png" alt="" id="eship1" class="enemy-ship">
-                        </div>
-                        <div class="falling-object" id="object2">
-                            <img src="./assets/beship1.png" alt="" id="eship2" class="enemy-ship">
-                        </div>
-                        <div class="falling-object" id="object3">
-                            <img src="./assets/beship2.png" alt="" id="eship3" class="enemy-ship">
-                        </div>
-                        <div class="falling-object" id="object4">
-                            <img src="./assets/beship3.png" alt="" id="eship4" class="enemy-ship">
-                        </div>
-                        <div class="falling-object" id="object5">
-                            <img src="./assets/beship4.png" alt="" id="eship5" class="enemy-ship">
-                        </div>
-                        
-                    </div>
-                    <div id="alia">
-                        <img src="./assets/ship1.png" alt="My ship">
-                    </div>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="description" content="Neon Invaders - Retro Space Shooter" />
+    <meta
+      name="keywords"
+      content="game, neon invaders, arcade, shooter, javascript"
+    />
+    <meta name="author" content="Akash Rajput" />
+    <title>Neon Invaders</title>
+    <link rel="stylesheet" href="./styles/landing.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/background.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- landing page -->
+    <div class="landing-container">
+      <!-- ATMOSPHERIC BACKGROUND -->
+      <div class="background-container">
+        <div class="background"></div>
+
+        <div class="starfield" id="starfield"></div>
+
+        <div class="dynamic-design wireframe-grid"></div>
+
+        <div class="background-shade"></div>
+
+        <div class="scanlines"></div>
+      </div>
+      <!-- TOP NAVIGATION -->
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <span class="navbar-logo">NEON_INVADERS</span>
         </div>
-    </section>
-    <script src="./index.js" charset="UTF-8"></script>
-</body>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <div class="navbar-links" id="navbarLinks">
+          <a href="index.html" class="nav-link active">STATION</a>
+          <a href="ranking.html" class="nav-link">RANKINGS</a>
+          <a href="about.html" class="nav-link">ABOUT</a>
+
+          <button class="coin-button mobile-coin">INSERT COIN</button>
+        </div>
+
+        <button class="coin-button desktop-coin">INSERT COIN</button>
+      </nav>
+
+      <main class="main-content">
+        <section class="hero-section">
+          <div class="hero-title-wrapper">
+            <h1 class="hero-title">NEON<br />INVADERS</h1>
+
+            <div class="hero-decoration hero-decoration-top"></div>
+
+            <div class="hero-decoration hero-decoration-bottom"></div>
+          </div>
+
+          <p class="hero-subtitle">
+            Defend the grid. Master the vector. Become the legend.
+          </p>
+
+          <div class="dropdown">
+            <button class="start-button" id="dropdownBtn">
+              <span class="button-text">START GAME</span>
+
+              <span class="dropdown-arrow">▼</span>
+
+              <div class="button-overlay"></div>
+            </button>
+
+            <div class="dropdown-menu">
+              <button class="dropdown-item" data-mode="random">
+                Endless Mode
+              </button>
+
+              <button class="dropdown-item" data-mode="levels">
+                Campaign Mode
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- BENTO GRID FEATURES -->
+        <section class="features-section">
+          <div class="features-grid">
+            <!-- Main Feature -->
+            <div class="feature-card-main">
+              <img src="./assets/visual.png" alt="" class="feature-image" />
+
+              <span class="system-label">SYSTEM_01</span>
+
+              <h3 class="feature-title">HYPER-FLUX VISUALS</h3>
+
+              <p class="feature-description">
+                Experience 120FPS vector-based destruction with dynamic neon
+                light blooming and reactive CRT filters.
+              </p>
+
+              <div class="progress-track">
+                <div class="progress-fill"></div>
+              </div>
+
+              <div class="carbon-overlay"></div>
+            </div>
+            <!-- Secondary Features -->
+            <div class="feature-card-secondary">
+              <div class="feature-row">
+                <div class="icon-box">
+                  <img
+                    src="./assets/arcade.png"
+                    alt="Arcade"
+                    class="feature-icon"
+                  />
+                </div>
+
+                <div class="feature-info">
+                  <h3 class="feature-title-secondary">Classic Arcade Feel</h3>
+
+                  <p class="feature-description-secondary">
+                    Reimagined mechanical feel with modern precision controls.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card-small">
+              <img
+                src="./assets/sound.png"
+                alt="Synth Core"
+                class="feature-small-icon"
+              />
+
+              <h4 class="feature-small-title">SYNTH_CORE</h4>
+
+              <p class="feature-small-description">
+                Procedural soundtrack shifts with the intensity of combat.
+              </p>
+            </div>
+
+            <div class="feature-card-small feature-card-primary">
+              <span class="feature-small-symbol material-symbols-outlined">
+                leaderboard
+              </span>
+
+              <h4 class="feature-small-title">GLOBAL_NET</h4>
+
+              <p class="feature-small-description">
+                Instant syncing with arcade cabinets worldwide.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HIGH SCORES (Leaderboard style) -->
+        <section class="high-scores-section">
+          <div class="leaderboard-container">
+            <div class="leaderboard-header">
+              <h2>HALL_OF_FAME</h2>
+              <span id="worldRecord">WORLD_RECORD_0</span>
+            </div>
+
+            <div id="leaderboard"></div>
+
+            <div class="leaderboard-footer">
+              <button>VIEW FULL SYSTEM LOGS</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- IMMERSIVE IMAGE SECTION -->
+        <section class="cta-section">
+          <img
+            src="./assets/footerBg.png"
+            alt="Cyberpunk arcade setup"
+            class="cta-bg-image"
+          />
+
+          <div class="cta-overlay"></div>
+
+          <div class="cta-content-wrapper">
+            <div class="cta-card">
+              <h2 class="cta-title">READY_PILOT?</h2>
+
+              <p class="cta-description">
+                The invasion is imminent. Synchronization at 98.4%. Prepare for
+                vector transmission.
+              </p>
+
+              <button class="cta-button">SYNC_CONTROLS</button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER (Footer from JSON) -->
+      <footer class="footer">
+        <div class="footer-left">
+          <span class="footer-logo">NI</span>
+          <span class="footer-copyright">
+            © <span id="year"></span> Akash Rajput
+          </span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#" class="footer-link"> SYSTEM_DIAGNOSTICS </a>
+
+          <a href="#" class="footer-link delay-1"> COIN_OP_MANUAL </a>
+
+          <a href="#" class="footer-link delay-2"> NETWORK_STATUS </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- game page -->
+    <div id="game-container" class="game-container">
+      <div class="hud">Score: <span id="score">0</span></div>
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
